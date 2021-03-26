@@ -1,14 +1,23 @@
 package Editor;
 
+import com.parser.Aesthetics.Aesthetics;
+import com.parser.Parser;
+
 public class Editor
 {
-    private static  Editor obj = null;
+    private static  Editor editor = null;
+    private  String color;
+    private  String font;
 
-    private Editor() {}  /**making the default constructor private*/
+    private Parser parser;
+
+
+
+    private Editor() {}  /**making it singleton*/
 
     public static Editor getInstance()
     {
-        if (obj == null)
+        if (editor == null)
         {
             /** To make sure that no more than a single  thread can
              * instantiate the
@@ -17,11 +26,21 @@ public class Editor
             synchronized (Editor.class)
             {
 
-                if (obj==null)
-                    obj = new Editor();
+                if (editor ==null)
+                    editor = new Editor();
             }
         }
-        return obj;
+        return editor;
     }
+
+
+    public Parser getParser() {
+        return parser;
+    }
+
+    public void setParser(Parser parser) {
+        this.parser = parser;
+    }
+
 }
 
