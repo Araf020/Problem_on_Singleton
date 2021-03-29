@@ -62,4 +62,9 @@ public class cppParser implements Parser
             }
         };
     }
+
+    @Override
+    public String toString() {
+        return "\nFont: " + this.font + " and color: " + this.color + " is set";
+    }
 }

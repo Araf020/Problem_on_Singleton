@@ -1,6 +1,7 @@
 package Editor;
 
 import com.parser.Aesthetics.Aesthetics;
+import com.parser.Factory.ParserFactory;
 import com.parser.Parser;
 
 public class Editor
@@ -13,21 +14,26 @@ public class Editor
 
 
 
-    private Editor() {}  /**making it singleton*/
+    private Editor() {
+        System.out.println("Editor Created");
+    }  /**making it singleton*/
 
     public static Editor getInstance()
     {
         if (editor == null)
         {
-            /** To make sure that no more than a single  thread can
-             * instantiate the
-             * object
+            /**
+             *
+             * Blocking multiplle threads to enter here simaltaniously
              */
             synchronized (Editor.class)
             {
 
-                if (editor ==null)
+                if (editor ==null) {
                     editor = new Editor();
+
+                }
+
             }
         }
         return editor;
@@ -38,8 +44,12 @@ public class Editor
         return parser;
     }
 
-    public void setParser(Parser parser) {
-        this.parser = parser;
+    public Editor setParser(String filetype) {
+
+        this.parser = new ParserFactory().getParser(filetype);
+        System.out.println(parser);
+        return this;
+
     }
 
 }

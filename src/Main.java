@@ -1,5 +1,4 @@
 import Editor.Editor;
-import Editor.EditorFactory;
 
 import java.util.Scanner;
 
@@ -7,19 +6,19 @@ public class Main {
 
     public static void main(String[] args) {
 
+        String extension;
 
-
-        System.out.println("Hello World!");
+        System.out.println("\nEnter a Filename among -> CPP, C and Python:\n");
 
         Scanner in = new Scanner(System.in);
 
-        String ext =  in.nextLine();
+        String filename =  in.nextLine();
+        String[] strs = filename.split("[.]");
 
-        System.out.println(ext);
+        extension = strs[strs.length-1];
+        System.out.println("\nParsing.........\n");
 
-        Editor editor = EditorFactory.getEditor(ext);
-
-
+        Editor editor = Editor.getInstance().setParser(extension);
 
 
     }
