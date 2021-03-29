@@ -6,6 +6,7 @@ public class cppParser implements Parser
 {
     private String color;
     private String font;
+    private String style;
 
     public cppParser() {
         this.font = "Monaco";
@@ -17,16 +18,6 @@ public class cppParser implements Parser
     /**complete below methods
      *
      */
-
-    @Override
-    public void setAppearence() {
-
-    }
-
-    @Override
-    public void setFunctionality() {
-
-    }
 
     @Override
     public void setAesthetics() {
@@ -62,6 +53,18 @@ public class cppParser implements Parser
             }
         };
     }
+
+
+    @Override
+    public void setAppearence() {
+
+    }
+
+    @Override
+    public void setFunctionality() {
+
+    }
+
 
     @Override
     public String toString() {

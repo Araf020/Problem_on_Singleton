@@ -5,24 +5,16 @@ import com.parser.Aesthetics.Aesthetics;
 public class pythonParser implements Parser{
     private String color;
     private String font;
-
+    private String style;
     public pythonParser() {
         this.font = "Consolas";
         this.color  = "blue";
         System.out.println("Python parser initialized");
     }
 
-    @Override
-    public void setAppearence() {
-
-    }
-
-
-
-    @Override
-    public void setFunctionality() {
-
-    }
+    /**
+     * complete below methods as needed
+     */
 
     @Override
     public void setAesthetics() {
@@ -59,6 +51,19 @@ public class pythonParser implements Parser{
         };
 
     }
+
+    @Override
+    public void setAppearence() {
+
+    }
+
+
+
+    @Override
+    public void setFunctionality() {
+
+    }
+
 
     @Override
     public String toString() {

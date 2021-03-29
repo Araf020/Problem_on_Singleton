@@ -6,23 +6,13 @@ public class cParser implements Parser {
 
     private  String color;
     private  String font;
+    private  String style;
 
 
     public cParser() {
        font = "Courier New";
         color = "Blue";
         System.out.println("C parser initialized");
-
-    }
-
-
-    @Override
-    public void setAppearence() {
-
-    }
-
-    @Override
-    public void setFunctionality() {
 
     }
 
@@ -61,6 +51,19 @@ public class cParser implements Parser {
             }
         };
     }
+
+
+    @Override
+    public void setAppearence() {
+
+    }
+
+    @Override
+    public void setFunctionality() {
+
+    }
+
+
 
     @Override
     public String toString() {
